@@ -15366,46 +15366,46 @@
 				u.r.Q *= 10
 				u.r.ch *= 10
 				u.r.cx *= 10
-                if(!(b.e == "drak@!" && b.level == 3)) {
+                if(b.e != "dark@!") {
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 嘿嘿，[1]，我就一直在[等候]你这击出现呀", u.r, t.$iav ? t.a5.x : (t.a5 ? t.a5 : t), null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 嘿嘿，[1]，我就一直在[等候]你这击出现呀", u.r, t.$iav ? t.a5.x : (t.a5 ? t.a5 : t), null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 你已踏入我的[陷阱]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 你已踏入我的[陷阱]", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 最强的攻击就是防守最[弱]的时候", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 最强的攻击就是防守最[弱]的时候", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e(`[0]: 现在，就让你知道我${u.r.r}如何[败]你吧`, u.r, t, null, null, 1, 1000, 2000))
-                } else {
+					d.a.push(T.e(`[0]: 现在，就让你知道我${u.r.r}如何[败]你吧`, u.r, t, null, null, 1, 1000, 7000))
+                } else if(b.level == 3){
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 呵呵，看来我已老了", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 呵呵，看来我已老了", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 想不到…你这样的[小角色]竟然能领悟这个[强绝境界]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 想不到…你这样的[小角色]竟然能领悟这个[强绝境界]", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 破解我的[所有杀著]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 破解我的[所有杀著]", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 海虎，废话少说，就看你以[生命]推动的[海虎爆破拳]能否取我性命吧", t, u.r, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 海虎，废话少说，就看你以[生命]推动的[海虎爆破拳]能否取我性命吧", t, u.r, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 哼。…我为何要用生命力推动了？", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 哼。…我为何要用生命力推动了？", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 什么？", t, u.r, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 什么？", t, u.r, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 在你的杀著轰向我之时，我便有这一[感觉]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 在你的杀著轰向我之时，我便有这一[感觉]", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 「我已能将力量谷至[自毁境界]」", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 「我已能将力量谷至[自毁境界]」", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 绝无可能！海虎，强谷至[一百万匹]力量只会令你九死一生！", t, u.r, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 绝无可能！海虎，强谷至[一百万匹]力量只会令你九死一生！", t, u.r, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 哈哈，谁知道呢？我的[感觉]告诉我，现在便是[最佳时机]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 哈哈，谁知道呢？我的[感觉]告诉我，现在便是[最佳时机]", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 把面前这可恶的家伙[轰下]！", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 把面前这可恶的家伙[轰下]！", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 现在，就让你知道我海虎如何[败]你吧", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push(T.e("[0]: 现在，就让你知道我海虎如何[败]你吧", u.r, t, null, null, 1, 1000, 7000))
 					u.r.go += 3
                 }
                 d.a.push($.v())
-                d.a.push(T.e("[0]: 他妈的磁场转动——", u.r, t, null, null, 1, 1000, 2000))
+                d.a.push(T.e("[0]: 他妈的磁场转动——", u.r, t, null, null, 1, 1000, 7000))
                 d.a.push($.v())
-                d.a.push(T.e("[0]: [一百万匹]力量!!", u.r, t, null, null, 1, 1000, 2000))
+                d.a.push(T.e("[0]: [一百万匹]力量!!", u.r, t, null, null, 1, 1000, 7000))
                 d.a.push($.v())
                 d.a.push(T.e(`[0]: [${u.r.r}爆破拳]!!!!!`, u.r, t, null, null, 1, 1000, 1000))
                 d.a.push($.v())
@@ -16348,7 +16348,7 @@
         am: function(a, b) {
             var u = a.x
               , t = this.r
-            return u != t.y && a !== t && !a.r1.G(0, $.ai())
+            return u != t.y && a !== t && !a.r1.G(0, $.ai()) && a.e != "tigershark@!" && a.e != "dark@!"
         },
         t: function(a, b, c, d) {
             var u, t, s, r = null, q = a[0].a, p = d.a
