@@ -4704,7 +4704,11 @@
                     if (q.gR() > 0)
                         q.H(a, e)
                 }
-				b.fy -= 64
+                if(c.level == 3) {
+					b.fy -= 80
+				} else {
+					b.fy -= 64
+				}
             }
         },
         pb: function(a, b, c, d, e) {
@@ -5974,7 +5978,7 @@
             _.x = a
             _.y = null
             _.z = 3
-            _.Q = 10
+            _.Q = 7
             _.c = _.b = _.a = null
         },
         hX: function hX() {
@@ -6239,6 +6243,12 @@
             _.f = 0
             _.c = _.b = _.a = _.r = null
         },
+        tigerCheckHP: function tigerCheckHP() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
         dM: function dM() {
             var _ = this
             _.e = !1
@@ -6258,6 +6268,18 @@
             _.c = _.b = _.a = _.r = null
         },
         tigerBlade: function tigerBlade() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
+        tigerBlastKick: function tigerBlastKick() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
+        tigerWindAttack: function tigerWindAttack() {
             var _ = this
             _.e = !1
             _.f = 0
@@ -6689,6 +6711,7 @@
             _.id = e
             _.k2 = _.k1 = null
             _.millionPower = false
+            _.upgrade = false
             _.k3 = f
             _.k4 = null
             _.r1 = g
@@ -6729,6 +6752,7 @@
             _.k2 = _.k1 = null
             _.level = 1
             _.superUpgradeEnd = false
+            _.life = 7
             _.k3 = f
             _.k4 = null
             _.r1 = g
@@ -7239,6 +7263,12 @@
             _.c = _.b = _.a = _.r = null
         },
         darkAttack: function darkAttack() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
+        tigerAttack: function tigerAttack() {
             var _ = this
             _.e = !1
             _.f = 0
@@ -13857,7 +13887,7 @@
               , r = a[0].a
               , q = T.u(u.r, !0, c)
               , p = d.a
-            p.push(T.e("[0]使用[九天轮回锁]", u.r, r, t, t, 20, 1000, 100))
+            p.push(T.e(u.r.level == 3 ? "[0]使用[无我轮回锁]" : "[0]使用[九天轮回锁]", u.r, r, t, t, 20, 1000, 100))
             if (r.a6($.kj(), c)) {
                 p.push(T.e(O.c("vVob"), r, u.r, t, t, 20, 1000, 100))
                 return
@@ -14041,7 +14071,9 @@
             u.go += 2
         },
         aq: function(a, b) {
-            if (--this.Q === 0)
+			this.Q -= 1
+			this.x.life -= 1
+            if (this.Q === 0)
                 this.H(a, b)
         },
         H: function(a, b) {
@@ -14053,8 +14085,8 @@
             u.E()
             u.superUpgradeEnd = true
             if (u.fr > 0) {
-				s = u.fr
-				u.fr = 0
+                s = u.fr
+                u.fr = 0
                 t = b.a
                 t.push($.v())
                 t.push(T.ap("[1]的[修罗轮回]结束", null, u))
@@ -14226,7 +14258,7 @@
             u.bI(q.r, d)
         }
     }
-     T.darkRecover.prototype = {
+    T.darkRecover.prototype = {
         b5: function(a) {
             return a.b1(this.r.y.f)
         },
@@ -15000,8 +15032,11 @@
     T.tigerFastPunch.prototype = {
         t: function(a, b, c, d) {
             var u, t, s, r, q, p, o, n = this, m = null, l = a[0].a, k = d.a
-            k.push(T.e("[0]使用[极速子弹拳]", n.r, l, m, m, 1, 1000, 100))
+            k.push(T.e(n.r.upgrade ? "[0]使用[雷霆电动]" : "[0]使用[极速子弹拳]", n.r, l, m, m, 1, 1000, 100))
             u = 4 + (c.m() & 3)
+            if(n.r.upgrade) {
+				 u = 8
+            }
             t = 100 + n.r.cy
             for (s = !1,
             r = 0; r < u; ++r) {
@@ -15087,6 +15122,26 @@
         },
         $iD: 1
     }
+    T.tigerCheckHP.prototype = {
+        ak: function(a, b, c, d, e) {
+			if(this.r.fr - a <= 180 && !this.r.upgrade) {
+				this.r.upgrade = true
+				this.r.id[2].f = 80
+				this.r.id[5].f = 20
+				this.r.id[7].f = 35
+				this.r.cx *= 2
+				this.r.cy *= 2
+				for(var j = 1; j < this.r.id.length; j++) {
+					this.r.id[j].f += 20
+				}
+			}
+            return a
+        },
+        T: function() {
+            this.r.y1.i(0, this)
+        },
+        $iD: 1
+    }
     T.dM.prototype = {
         gb3: function() {
             return 5
@@ -15115,21 +15170,108 @@
     }
     T.tigerBlade.prototype = {
         gb3: function() {
-            return 4
+            return 2
         },
         gb4: function() {
-            return 5
+            return 3
+        },
+        t: function(a, b, c, d) {
+            var u, t, s, r, q, p, o, n = H.a([], [T.aU]), m, l, k, v
+            for (u = 0; u < a.length; ++u)
+                n.push(a[u].a)
+            t = this.r.upgrade ? "[0]使用[雷霆天刀]" : "[0]使用[磁场天刀]"
+            if (!this.r.upgrade) {
+                s = this.r
+                r = H.a(n.slice(0), [H.n(n, 0)])
+                q = d.a
+                q.push(T.e(t, s, null, null, r, 1, 1000, 100))
+                p = T.u(this.r, !0, c) * 2.5 / (n.length + 0.5) * 1.5
+                for (u = 0; u < n.length; ++u) {
+                    o = n[u]
+                    if (o.fr > 0) {
+                        q.push($.v())
+                        o.a0(p, !0, this.r, T.mA(), c, d)
+                    }
+                }
+            } else {
+                m = null
+                l = a[0].a
+                k = d.a
+                v = n
+                n = this
+                k.push(T.e(t, n.r, l, m, m, 1, 1000, 100))
+                for (var j = 0; j < v.length; j++) {
+                    l = v[j]
+                    u = 3
+                    t = 100 + n.r.cy
+                    for (s = !1,
+                    r = 0; r < u; ++r) {
+                        q = n.r
+                        if (q.fr > 0 && !q.A && l.fr > 0) {
+                            k.push($.v())
+                            if (l.fr > 0 && !l.A && T.bd(t, l.dx + l.cy, c)) {
+                                if (s)
+                                    k.push(T.e(O.c("SYdr"), l, n.r, m, m, 0, 1000, 100))
+                                else
+                                    k.push(T.e(O.c("vVob"), l, n.r, m, m, 0, 1000, 100))
+                                break
+                            }
+                            t -= 10
+                            q = T.u(n.r, !0, c)
+                            p = k.length
+                            o = n.r
+                            if (l.aA(l.ak(C.e.Z(q * 0.45 / T.cc(l, !0, c)), o, T.a3(), c, d), o, T.a3(), c, d) > 0)
+                                s = !0
+                            k[p].b = 300
+                        }
+                    }
+                }
+            }
+        }
+    }
+    T.tigerBlastKick.prototype = {
+        gb3: function() {
+            return 3
+        },
+        gb4: function() {
+            return 4
         },
         t: function(a, b, c, d) {
             var u, t, s, r, q, p, o, n = H.a([], [T.aU])
             for (u = 0; u < a.length; ++u)
                 n.push(a[u].a)
-            t = "[0]使用[磁场天刀]"
+            t = "[0]使用[极火爆破腿]"
             s = this.r
             r = H.a(n.slice(0), [H.n(n, 0)])
             q = d.a
             q.push(T.e(t, s, null, null, r, 1, 1000, 100))
             p = T.u(this.r, !0, c) * 2.5 / (n.length + 0.5) * 1.5
+            for (u = 0; u < n.length; ++u) {
+                o = n[u]
+                if (o.fr > 0) {
+                    q.push($.v())
+                    o.a0(p * 2.5, !0, this.r, T.mA(), c, d)
+                }
+            }
+        }
+    }
+    T.tigerWindAttack.prototype = {
+        gb3: function() {
+            return 10
+        },
+        gb4: function() {
+            return 11
+        },
+        t: function(a, b, c, d) {
+            var u, t, s, r, q, p, o, n = H.a([], [T.aU])
+            for (u = 0; u < a.length; ++u)
+                n.push(a[u].a)
+            t = "[0]使用[暴风杀拳]"
+            s = this.r
+            r = H.a(n.slice(0), [H.n(n, 0)])
+            q = d.a
+            q.push(T.e(t, s, null, null, r, 1, 1000, 100))
+            p = T.u(this.r, !0, c) * 2.5 / (n.length + 0.5) * 1.25
             for (u = 0; u < n.length; ++u) {
                 o = n[u]
                 if (o.fr > 0) {
@@ -15173,10 +15315,11 @@
             return 6
         },
         t: function(a, b, c, d) {
-            var u, t, s, r, q, p, o, n = H.a([], [T.aU])
+            var u, t, s, r, q, p, o, n = H.a([], [T.aU]), multiple
             for (u = 0; u < a.length; ++u)
                 n.push(a[u].a)
-            t = "[0]使用[冰雪爆破拳]"
+            t = this.r.upgrade ? "[0]使用[冰雪爆破拳]" : "[0]使用[海虎冰封拳]"
+            multiple = this.r.upgrade ? 1.5 : 1
             s = this.r
             r = H.a(n.slice(0), [H.n(n, 0)])
             q = d.a
@@ -15186,18 +15329,18 @@
                 o = n[u]
                 if (o.fr > 0) {
                     q.push($.v())
-                    o.a0(p, !0, this.r, T.kV(), c, d)
+                    o.a0(p * multiple, !0, this.r, T.kV(), c, d)
                 }
             }
         }
     }
     T.tigerBlastPunch.prototype = {
         t: function(a, b, c, d) {
-            var u = this
-              , t = a[0].a
-            s = T.u(u.r, !1, c) * 3
+            var u = this, t = a[0].a, multiple
+            multiple = u.r.upgrade ? 5 : 3
+            s = T.u(u.r, !1, c)
             d.a.push(T.e("[0]使用[海虎爆破拳]", u.r, t, null, null, 1, 1000, 100))
-            t.a0(s, !1, u.r, T.a3(), c, d)
+            t.a0(s * multiple, !1, u.r, T.a3(), c, d)
         }
     }
     T.tigerMillionPunch.prototype = {
@@ -15208,50 +15351,90 @@
             var u = this
               , t = b
               , s = c.m()
-            if ((s & 127) < u.f && b.e != u.r.e) {
-				u.r.millionPower = true
-            	d.a.pop()	//pop "die"
-				d.a.pop()	//pop "\n"
-				d.a.pop()	//pop "damage"
-				d.a.push($.v())
-				d.a.push(T.e("[0]: 嘿嘿，[1]，我就一直在[等候]你这击出现呀", u.r, t.a5 ? t.a5 : t, null, null, 1, 1000, 2000))
-				d.a.push($.v())
-				d.a.push(T.e("[0]: 你已踏入我的[陷阱]", u.r, t, null, null, 1, 1000, 2000))
-				d.a.push($.v())
-				d.a.push(T.e("[0]: 最强的攻击就是防守最[弱]的时候", u.r, t, null, null, 1, 1000, 2000))
-				d.a.push($.v())
-				d.a.push(T.e(`[0]: 现在，就让你知道我${u.r.r}如何[败]你吧`, u.r, t, null, null, 1, 1000, 2000))
-				d.a.push($.v())
-				d.a.push(T.e("[0]: 他妈的磁场转动——", u.r, t, null, null, 1, 1000, 2000))
-				d.a.push($.v())
-				d.a.push(T.e("[0]: [一百万匹]力量!!", u.r, t, null, null, 1, 1000, 2000))
-				d.a.push($.v())
-				d.a.push(T.e(`[0]: [${u.r.r}爆破拳]!!!!!`, u.r, t, null, null, 1, 1000, 1000))
-				d.a.push($.v())
-				s = T.u(u.r, !1, c) * 20
-				t.a0(s, !1, u.r, T.a3(), c, d)
-				d.a.push($.v())
-				if(t.a5) {
-					for(let j = 0; j < t.x.e.length; j++) {
-						if((t.x.e[j].a5 && t.x.e[j].a5.e == t.a5.e || t.a5.e == t.x.e[j].e) && t.x.e[j].fr > 0) {
-							s = T.u(u.r, !1, c) * 20
-							t.x.e[j].a0(s, !1, u.r, T.a3(), c, d)
-							d.a.push($.v())
-						}
-					}
-				} else {
-					for(let j = 0; j < t.x.e.length; j++) {
-						if(t.x.e[j].a5 && t.x.e[j].a5.e == t.e && t.x.e[j].fr > 0) {
-							s = T.u(u.r, !1, c) * 20
-							t.x.e[j].a0(s, !1, u.r, T.a3(), c, d)
-							d.a.push($.v())
-						}
-					}
-				}
-				u.r.millionPower = false
-				u.r.fr += 180
-				d.a.push(T.e("[1]回复体力[2]点", u.r, T.a1(u.r, 0), new T.aG(u.r.fr), null, 0, 1000, 100))
-				return !0
+            if ((s & 127) < u.f && b.e != u.r.e || b.e == "dark@!" && b.level == 3 && u.f != 0) {
+                u.r.millionPower = true
+                d.a.pop()
+                //pop "die"
+                d.a.pop()
+                //pop "\n"
+                d.a.pop()
+                //pop "damage"
+                u.r.cx *= 10
+				u.r.cy *= 10
+				u.r.dy *= 10
+				u.r.db *= 10
+				u.r.Q *= 10
+				u.r.ch *= 10
+				u.r.cx *= 10
+                if(!(b.e == "drak@!" && b.level == 3)) {
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 嘿嘿，[1]，我就一直在[等候]你这击出现呀", u.r, t.$iav ? t.a5.x : (t.a5 ? t.a5 : t), null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 你已踏入我的[陷阱]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 最强的攻击就是防守最[弱]的时候", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e(`[0]: 现在，就让你知道我${u.r.r}如何[败]你吧`, u.r, t, null, null, 1, 1000, 2000))
+                } else {
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 呵呵，看来我已老了", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 想不到…你这样的[小角色]竟然能领悟这个[强绝境界]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 破解我的[所有杀著]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 海虎，废话少说，就看你以[生命]推动的[海虎爆破拳]能否取我性命吧", t, u.r, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 哼。…我为何要用生命力推动了？", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 什么？", t, u.r, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 在你的杀著轰向我之时，我便有这一[感觉]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 「我已能将力量谷至[自毁境界]」", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 绝无可能！海虎，强谷至[一百万匹]力量只会令你九死一生！", t, u.r, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 哈哈，谁知道呢？我的[感觉]告诉我，现在便是[最佳时机]", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 把面前这可恶的家伙[轰下]！", u.r, t, null, null, 1, 1000, 2000))
+					d.a.push($.v())
+					d.a.push(T.e("[0]: 现在，就让你知道我海虎如何[败]你吧", u.r, t, null, null, 1, 1000, 2000))
+					u.r.go += 3
+                }
+                d.a.push($.v())
+                d.a.push(T.e("[0]: 他妈的磁场转动——", u.r, t, null, null, 1, 1000, 2000))
+                d.a.push($.v())
+                d.a.push(T.e("[0]: [一百万匹]力量!!", u.r, t, null, null, 1, 1000, 2000))
+                d.a.push($.v())
+                d.a.push(T.e(`[0]: [${u.r.r}爆破拳]!!!!!`, u.r, t, null, null, 1, 1000, 1000))
+                d.a.push($.v())
+                s = T.u(u.r, !1, c) * 20
+                t.a0(s, !1, u.r, T.a3(), c, d)
+                d.a.push($.v())
+                if (t.a5) {
+                    for (let j = 0; j < t.x.e.length; j++) {
+                        if (((t.x.e[j].$iav && t.x.e[j].a5.x.e == t.a5.x.e || t.a5.x.e == t.x.e[j].e) || (t.x.e[j].a5 && t.x.e[j].a5.e == t.a5.e || t.a5.e == t.x.e[j].e)) && t.x.e[j].fr > 0) {
+                            s = T.u(u.r, !1, c) * 20
+                            t.x.e[j].a0(s, !1, u.r, T.a3(), c, d)
+                            d.a.push($.v())
+                        }
+                    }
+                } else {
+                    for (let j = 0; j < t.x.e.length; j++) {
+                        if (((t.x.e[j].$iav && t.x.e[j].a5.x.e == t.e) || (t.x.e[j].a5 && t.x.e[j].a5.e == t.e)) && t.x.e[j].fr > 0) {
+                            s = T.u(u.r, !1, c) * 20
+                            t.x.e[j].a0(s, !1, u.r, T.a3(), c, d)
+                            d.a.push($.v())
+                        }
+                    }
+                }
+				u.r.E()
+                u.r.millionPower = false
+                u.r.fr += 180
+                d.a.push(T.e("[1]回复体力[2]点", u.r, T.a1(u.r, 0), new T.aG(u.r.fr), null, 0, 1000, 100))
+                this.f = 0
+                return !0
             }
             return !1
         },
@@ -15785,6 +15968,7 @@
             t.r = this
             this.k2 = t
             t = this.id
+            t.push(new T.tigerCheckHP())
             u = new T.tigerMillionPunch()
             u.f = 30
             t.push(u)
@@ -15797,8 +15981,14 @@
             u = new T.tigerFastPunch()
             u.f = 25
             t.push(u)
+            u = new T.tigerWindAttack()
+            u.f = 0
+            t.push(u)
             u = new T.tigerBlade()
             u.f = 30
+            t.push(u)
+            u = new T.tigerBlastKick()
+            u.f = 0
             t.push(u)
             u = new T.tigerBlastPunch()
             u.f = 40
@@ -15827,7 +16017,7 @@
             u.f = 0
             t.push(u)
             u = new T.darkIron()
-            f = new T.dF(1 / 0, u)
+            f = new T.dF(1 / 0,u)
             u.fr = f
             u.fx = new T.ay(u)
             u.fy = new T.aN(u)
@@ -17193,9 +17383,9 @@
             u = new F.ar(u,u.b,[H.n(u, 0)]); u.p(); )
                 u.b.ay(a, c, d, e)
             if (this.fr <= 0) {
-				if(c.millionPower) {
-					this.tigerCurse = true
-				}
+                if (c.millionPower) {
+                    this.tigerCurse = true
+                }
                 this.bf(b, c, d, e)
                 return b
             } else
@@ -17492,6 +17682,37 @@
             o.a0(r, !1, q.r, T.mA(), c, d)
         }
     }
+    T.tigerAttack.prototype = {
+        t: function(a, b, c, d) {
+            var u, t, s, r, q = this, p = null, o = a[0].a
+            if(q.r.fr <= 180 && !q.r.upgrade) {
+				q.r.upgrade = true
+				q.r.id[1].f = 60
+				q.r.id[4].f = 25
+				q.r.id[6].f = 30
+            }
+            if (b) {
+                u = q.r
+                u = u.db > u.Q
+            } else
+                u = !1
+            if (u) {
+                u = q.r
+                t = C.b.ao(u.db - u.Q, 2)
+                s = u.fy
+                if (s >= t) {
+                    u.fy = s - t
+                    r = T.u(u, !0, c)
+                    d.a.push(T.e(O.c("zkrc"), q.r, o, p, p, 0, 1000, 100))
+                    o.a0(r, !0, q.r, T.a3(), c, d)
+                    return
+                }
+            }
+            r = T.u(q.r, !1, c)
+            d.a.push(T.e(O.c("Ukql"), q.r, o, p, p, 0, 1000, 100))
+            o.a0(r, !1, q.r, T.mA(), c, d)
+        }
+    }
     T.darkAttack.prototype = {
         t: function(a, b, c, d) {
             var u, t, s, r, q = this, p = null, o = a[0].a
@@ -17509,10 +17730,10 @@
                     r = T.u(u, !0, c)
                     d.a.push(T.e(O.c("zkrc"), q.r, o, p, p, 0, 1000, 100))
                     o.a0(r, !0, q.r, T.a3(), c, d)
-                    if((c.m() & 127) < 30 && o.fr > 0) {
-						d.a.push($.v())
-						d.a.push(T.e("[0]发动[震禅轮回]", q.r, o, p, p, 0, 1000, 100))
-						o.a0(r * 1.5, !0, q.r, T.a3(), c, d)
+                    if ((c.m() & 127) < 30 && o.fr > 0) {
+                        d.a.push($.v())
+                        d.a.push(T.e("[0]发动[震禅轮回]", q.r, o, p, p, 0, 1000, 100))
+                        o.a0(r * 1.5, !0, q.r, T.a3(), c, d)
                     }
                     return
                 }
@@ -17520,10 +17741,10 @@
             r = T.u(q.r, !1, c)
             d.a.push(T.e(O.c("Ukql"), q.r, o, p, p, 0, 1000, 100))
             o.a0(r, !1, q.r, T.mA(), c, d)
-            if((c.m() & 127) < 30 && o.fr > 0) {
-				d.a.push($.v())
-				d.a.push(T.e("[0]发动[震禅轮回]", q.r, o, p, p, 0, 1000, 100))
-				o.a0(r * 1.5, !0, q.r, T.a3(), c, d)
+            if ((c.m() & 127) < 30 && o.fr > 0) {
+                d.a.push($.v())
+                d.a.push(T.e("[0]发动[震禅轮回]", q.r, o, p, p, 0, 1000, 100))
+                o.a0(r * 1.5, !0, q.r, T.a3(), c, d)
             }
         }
     }
@@ -17853,7 +18074,7 @@
         aX: function(a, b, c, d) {
             var u, t = this, s = c.m(), r = t.f, dmg, k
             if ((t.r.level <= 2 || t.r.level == 3 && !t.r.superUpgradeEnd) && !t.r.tigerCurse) {
-				dmg = parseInt(d.a[d.a.length - 3].a)
+                dmg = parseInt(d.a[d.a.length - 3].a)
                 s = C.c.K("[0]使用[修罗永生决]", $.lb())
                 r = t.r
                 u = d.a
@@ -17862,26 +18083,27 @@
                 r = O.c("YmSv")
                 s = t.r
                 u.push(T.e(r, s, T.a1(s, 0), new T.aG(t.r.fr), null, 0, 1000, 100))
-                if(dmg >= 160 && s.level == 1) {
-					u.push($.v())
-					u.push(T.e("[0]发动[黑暗轮回]", s, s, null, null, 80, 1500, 1000))
-					s.id[1].f = 20
-					s.id[2].f = 23
-					s.id[3].f = 25
-					s.level = 2
-                } else if(s.level == 2) {
-					u.push($.v())
-					u.push(T.e("[0]发动[修罗轮回]", s, s, null, null, 80, 1500, 1000))
+                if (dmg >= 160 && s.level == 1) {
+                    u.push($.v())
+                    u.push(T.e("[0]发动[黑暗轮回]", s, s, null, null, 80, 1500, 1000))
+                    s.id[1].f = 20
+                    s.id[2].f = 23
+                    s.id[3].f = 25
+                    s.level = 2
+                } else if (s.level == 2) {
+                    u.push($.v())
+                    u.push(T.e("[0]发动[修罗轮回]", s, s, null, null, 80, 1500, 1000))
                     k = H.o(s.r1.h(0, "darksuperupgrade"), "$idarksuperupgrade")
-                    if(k == null) {
-						k = new T.darkSuperUpgrade(s)
-						k.y = new T.ay(k)
-						s.r1.k(0, "darksuperupgrade", k)
-						s.r2.i(0, k)
-						s.x1.i(0, k.y)
-						s.E()
-					}
-					s.level = 3
+                    if (k == null) {
+                        k = new T.darkSuperUpgrade(s)
+                        k.y = new T.ay(k)
+                        s.r1.k(0, "darksuperupgrade", k)
+                        s.r2.i(0, k)
+                        s.x1.i(0, k.y)
+                        s.E()
+                        k.Q = s.life
+                    }
+                    s.level = 3
                 }
                 return !0
             }
@@ -18552,10 +18774,10 @@
     T.iM.prototype = {
         $2: function(a, b) {
             var u = P.j
-           // if (b.b == $.eG()) {
-                u = new T.hw(a,b,P.aH(8, 0, u))
-                u.a = a
-                return u
+            // if (b.b == $.eG()) {
+            u = new T.hw(a,b,P.aH(8, 0, u))
+            u.a = a
+            return u
             //} else {
             //    u = new T.cx(a,b,P.aH(8, 0, u))
             //    u.a = a
@@ -18887,7 +19109,7 @@
         t(Z.hl, Z.ax)
         s(F.ab, [T.H, T.M, T.D, T.J, T.L, T.K, T.A, T.G, T.C, T.I])
         s(T.H, [T.y, T.hJ, T.hR, T.i0, T.i3, T.dU, T.dZ, T.bU, T.dQ, T.hZ, T.i5, T.dV, T.dX, T.i9, T.ih, T.im, T.io, T.tigerMillionPunch, T.darkRevive])
-        s(T.y, [T.dL, T.hI, T.hK, T.bx, T.hL, T.hM, T.dN, T.dO, T.dP, T.hS, T.hU, T.hV, T.bV, T.dR, T.hX, T.dS, T.dT, T.i1, T.i6, T.i8, T.dW, T.ia, T.i7, T.ig, T.ij, T.hW, T.ik, T.il, T.dM, T.hO, T.dc, T.hQ, T.i_, T.bI, T.i2, T.i4, T.ie, T.aK, T.bm, T.bn, T.hT, T.dY, T.ic, T.tigerIceAttack, T.tigerBlastPunch, T.tigerBlade, T.tigerRecover, T.tigerFastPunch, T.darkRecover, T.darkFastAttack, T.darkIron, T.darkHaste, T.darkLock, T.darkDemonSword, T.darkAttack])
+        s(T.y, [T.dL, T.hI, T.hK, T.bx, T.hL, T.hM, T.dN, T.dO, T.dP, T.hS, T.hU, T.hV, T.bV, T.dR, T.hX, T.dS, T.dT, T.i1, T.i6, T.i8, T.dW, T.ia, T.i7, T.ig, T.ij, T.hW, T.ik, T.il, T.dM, T.hO, T.dc, T.hQ, T.i_, T.bI, T.i2, T.i4, T.ie, T.aK, T.bm, T.bn, T.hT, T.dY, T.ic, T.tigerAttack, T.tigerCheckHP, T.tigerIceAttack, T.tigerBlastPunch, T.tigerBlade, T.tigerRecover, T.tigerFastPunch, T.tigerWindAttack, T.tigerBlastKick, T.darkRecover, T.darkFastAttack, T.darkIron, T.darkHaste, T.darkLock, T.darkDemonSword, T.darkAttack])
         s(T.M, [T.bf, T.co, T.dj, T.cG, T.aN, T.hz, T.darkHasteRun, T.darkSuperUpgrade])
         s(T.p, [T.dt, T.aQ, T.ii, T.h0, T.iT])
         s(T.w, [T.dC, T.av, T.cA, T.hc, T.hj, T.hk, T.he, T.cy])
@@ -19291,7 +19513,7 @@
         $.ac = P.cs(P.f, Z.ax)
         $.or = function() {
             var u = P.f
-            return P.dq(["tigershark", "R0lGODlhEAAQAJEAAP8AAP///wAAAP///yH5BAEAAAMALAAAAAAQABAAAAI9nCepeS0AIxQNyQuoeSBgn1lQAI5lEpGSOnHjKqEgS2dPOad2l3fmTgoKg8ChccczsigcJUgjwkwqiyq0AAA7","hell", "R0lGODlhEAAQAJEAAAC0/wAAAP///wAAACH5BAEAAAIALAAAAAAQABAAAAIqlB2px5IAY2ohWnnq3QFt7nzfI15kKWkodK4t2qllF7oZTMks3TjKxCgAADs=", "dark", "R0lGODlhEAAQALMAAPr6+wQEAf7+/QwKAhEQDf38+xEODP79/f////z8/Pn5+QAAAP///wAAAAAAAAAAACH5BAEAAAwALAAAAAAQABAAAARIkEm5qp2YjYW6rxn3Wd0yiYhVGUFJlWpFcCZKpncFo7io9x3ADecpqkYdwY5HRAgSMV4NUTgUryaGbeii+EgKEOZnzGa0sUwEADs=", "aokiji", "R0lGODlhEAAQAMIDAAAAAEB2/4Kl/////////////////////yH5BAEKAAQALAAAAAAQABAAAANISLrQsJC1MVwkLgSqLW6bQFFi4ACjIGxDoI7gqHFsO9UsXgFuPXIr0Or3691kHGSMxuRMSMPWi3IK/UqeTM7UuDio3YskDEkAADs=", "conan", "R0lGODlhEAAQAMIAAAAAANAYISpXyf///wAAAAAAAAAAAAAAACH5BAEKAAQALAAAAAAQABAAAANISATczkqBQasFcQlrBV6MsHGiEzQj5TEnELzM5cIsbdLLC+/6N/O/E6j3IP5ilVqrBUgNVi6HyDltSJoiVekTCU23me4DEkkAADs=", "covid", "R0lGODlhEAAQAIIAMf/GAOpK/f///wAAAP///wAAAAAAAAAAACH5BAEAAAQALAAAAAAQABAAAgNKSLrTvZC4AeqIqgEttoNU1wSOx1BBmoabNJGDGpjURlqBAJf6ba+WWgwmy3kcRYFO6AKolMuJBCAqmjIUJKd12moemNrxgnF9IgkAOw==", "ikaruga", "R0lGODlhEAAQAMIEAAAAAAcHB7MABFuV/////////////////yH5BAEKAAcALAAAAAAQABAAAANKeLrRsZA1Qlw8jmoCGgzaMAiC9iiTOFBk6WGUypLUk4pbW00EvhG0XWz1C2Z8o9kO1uuNSqUKCqR60l5MZ1AqAf0skczudJliFwkAOw==", "lazy", "R0lGODlhEAAQAMICAAAAAAgICP+3t/////+3t/+3t/+3t/+3tyH5BAEKAAQALAAAAAAQABAAAANPSLpM8K9JMCqQDoIwwp3VQG1fBnFeWFKW6GnL1rFi87raSQQcvXEhHkeQGwqOncBxKeAxj07io6kkQZXPKJM3YCa7yySwIhwnd5qAokhIAAA7", "mario", "R0lGODlhEAAQAIEAMQAAANgoAPz8/AAAACH5BAEAAAAALAAAAAAQABAAAQJBhD2px6AhRFgshRvvHCdJGH1CgoDhKXEWqLHboH2tvEItpq3ZvXvnfPIphooI0YgcLXyjpLKDQnE6g6hxSiVSAAUAOw==", "mosquito", "R0lGODlhEAAQAKECAAAAAP8AAP///////yH5BAEKAAMALAAAAAAQABAAAAJB3ICpaCnxRIRKoAkpsJu/AHpch4DgxR0kcK6GKrGB+zrylrzH2OL62or9SKcYYIgr5mq82eXI5AQtw1gxhVwwDAUAOw==", "saitama", "R0lGODlhEAAQAMIGAAAAAAgICGxsbP/AmP/PV/////jIUfjIUSH5BAEKAAcALAAAAAAQABAAAANKeLrRsZC1MVw8juraYNhUIVYSGIodZprPtG7ZC8YyFxSC8OZFAIi4nJAnAhgLx2DxZwQQCMZn7hmFOp/YKZZa3Xqth6bR1xADDgkAOw==", "seed", "R0lGODlhEAAQAMIDAAAAAG9tbUCy5////////////////////yH5BAEKAAQALAAAAAAQABAAAANFSLrQsJC1MVwkjuraVN6gA4CDIJCNSW5BkJon2LZpAMdzMLiAYN85HQ/28wWHpmJrN3sRjUya4xm0YJzNTmTKe1wkWkgCADs=", "slime", "R0lGODlhEAAQAMIEAAABAFaSRV6qSLn9qgAAAAAAAAAAAAAAACH5BAEKAAQALAAAAAAQABAAAANCSKrQvpA4QcWDrWoLsB5bxwDVYApB2jClaaaqRMIuCk92CuYBR8G9DSUjLBI3wMpRQzvhis4OqVUbjopKkczBvSQAADs=", "sonic", "R0lGODlhEAAQAMIDAAgICOgSJh9O/////////////////////yH5BAEKAAQALAAAAAAQABAAAANBSLrQsJA1IVwkjuraINDDsFUSFYZbh5knqj2T0LpUBp4jN9JpnJuc1S8UIGE+uUBRJRQonzXP5LlkSpCWy/URSQAAOw==", "yuri", "R0lGODlhEAAQAKEDAAAAAN4H28asxv///yH5BAEKAAMALAAAAAAQABAAAAI+hI85EB3s4DNBiFcvs3NjvmlL9WkesEDnKI7fw8Lpi6roMJ42jh8NNeEJVb+bsFc0HIfB5ZFhdPIO0mf0WAAAOw=="], u, u)
+            return P.dq(["tigershark", "R0lGODlhEAAQAJEAAP8AAP///wAAAP///yH5BAEAAAMALAAAAAAQABAAAAI9nCepeS0AIxQNyQuoeSBgn1lQAI5lEpGSOnHjKqEgS2dPOad2l3fmTgoKg8ChccczsigcJUgjwkwqiyq0AAA7", "hell", "R0lGODlhEAAQAJEAAAC0/wAAAP///wAAACH5BAEAAAIALAAAAAAQABAAAAIqlB2px5IAY2ohWnnq3QFt7nzfI15kKWkodK4t2qllF7oZTMks3TjKxCgAADs=", "dark", "R0lGODlhEAAQALMAAPr6+wQEAf7+/QwKAhEQDf38+xEODP79/f////z8/Pn5+QAAAP///wAAAAAAAAAAACH5BAEAAAwALAAAAAAQABAAAARIkEm5qp2YjYW6rxn3Wd0yiYhVGUFJlWpFcCZKpncFo7io9x3ADecpqkYdwY5HRAgSMV4NUTgUryaGbeii+EgKEOZnzGa0sUwEADs=", "aokiji", "R0lGODlhEAAQAMIDAAAAAEB2/4Kl/////////////////////yH5BAEKAAQALAAAAAAQABAAAANISLrQsJC1MVwkLgSqLW6bQFFi4ACjIGxDoI7gqHFsO9UsXgFuPXIr0Or3691kHGSMxuRMSMPWi3IK/UqeTM7UuDio3YskDEkAADs=", "conan", "R0lGODlhEAAQAMIAAAAAANAYISpXyf///wAAAAAAAAAAAAAAACH5BAEKAAQALAAAAAAQABAAAANISATczkqBQasFcQlrBV6MsHGiEzQj5TEnELzM5cIsbdLLC+/6N/O/E6j3IP5ilVqrBUgNVi6HyDltSJoiVekTCU23me4DEkkAADs=", "covid", "R0lGODlhEAAQAIIAMf/GAOpK/f///wAAAP///wAAAAAAAAAAACH5BAEAAAQALAAAAAAQABAAAgNKSLrTvZC4AeqIqgEttoNU1wSOx1BBmoabNJGDGpjURlqBAJf6ba+WWgwmy3kcRYFO6AKolMuJBCAqmjIUJKd12moemNrxgnF9IgkAOw==", "ikaruga", "R0lGODlhEAAQAMIEAAAAAAcHB7MABFuV/////////////////yH5BAEKAAcALAAAAAAQABAAAANKeLrRsZA1Qlw8jmoCGgzaMAiC9iiTOFBk6WGUypLUk4pbW00EvhG0XWz1C2Z8o9kO1uuNSqUKCqR60l5MZ1AqAf0skczudJliFwkAOw==", "lazy", "R0lGODlhEAAQAMICAAAAAAgICP+3t/////+3t/+3t/+3t/+3tyH5BAEKAAQALAAAAAAQABAAAANPSLpM8K9JMCqQDoIwwp3VQG1fBnFeWFKW6GnL1rFi87raSQQcvXEhHkeQGwqOncBxKeAxj07io6kkQZXPKJM3YCa7yySwIhwnd5qAokhIAAA7", "mario", "R0lGODlhEAAQAIEAMQAAANgoAPz8/AAAACH5BAEAAAAALAAAAAAQABAAAQJBhD2px6AhRFgshRvvHCdJGH1CgoDhKXEWqLHboH2tvEItpq3ZvXvnfPIphooI0YgcLXyjpLKDQnE6g6hxSiVSAAUAOw==", "mosquito", "R0lGODlhEAAQAKECAAAAAP8AAP///////yH5BAEKAAMALAAAAAAQABAAAAJB3ICpaCnxRIRKoAkpsJu/AHpch4DgxR0kcK6GKrGB+zrylrzH2OL62or9SKcYYIgr5mq82eXI5AQtw1gxhVwwDAUAOw==", "saitama", "R0lGODlhEAAQAMIGAAAAAAgICGxsbP/AmP/PV/////jIUfjIUSH5BAEKAAcALAAAAAAQABAAAANKeLrRsZC1MVw8juraYNhUIVYSGIodZprPtG7ZC8YyFxSC8OZFAIi4nJAnAhgLx2DxZwQQCMZn7hmFOp/YKZZa3Xqth6bR1xADDgkAOw==", "seed", "R0lGODlhEAAQAMIDAAAAAG9tbUCy5////////////////////yH5BAEKAAQALAAAAAAQABAAAANFSLrQsJC1MVwkjuraVN6gA4CDIJCNSW5BkJon2LZpAMdzMLiAYN85HQ/28wWHpmJrN3sRjUya4xm0YJzNTmTKe1wkWkgCADs=", "slime", "R0lGODlhEAAQAMIEAAABAFaSRV6qSLn9qgAAAAAAAAAAAAAAACH5BAEKAAQALAAAAAAQABAAAANCSKrQvpA4QcWDrWoLsB5bxwDVYApB2jClaaaqRMIuCk92CuYBR8G9DSUjLBI3wMpRQzvhis4OqVUbjopKkczBvSQAADs=", "sonic", "R0lGODlhEAAQAMIDAAgICOgSJh9O/////////////////////yH5BAEKAAQALAAAAAAQABAAAANBSLrQsJA1IVwkjuraINDDsFUSFYZbh5knqj2T0LpUBp4jN9JpnJuc1S8UIGE+uUBRJRQonzXP5LlkSpCWy/URSQAAOw==", "yuri", "R0lGODlhEAAQAKEDAAAAAN4H28asxv///yH5BAEKAAMALAAAAAAQABAAAAI+hI85EB3s4DNBiFcvs3NjvmlL9WkesEDnKI7fw8Lpi6roMJ42jh8NNeEJVb+bsFc0HIfB5ZFhdPIO0mf0WAAAOw=="], u, u)
         }()
         $.kG = function() {
             var u = P.f
