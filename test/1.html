@@ -1,0 +1,117 @@
+<html>
+<script>
+var http = new XMLHttpRequest();
+http.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        if (isPremium(this.responseText)) {
+            console.log("premium")
+        } else {
+            console.log("normal")
+        }
+    };
+};
+
+var url = "http://s.herofighter.com/v0.7/login.php?em=testreg13@ym.com&pw=1234563";
+http.open("GET", url, true);
+http.send();
+
+function isPremium(xml) {
+    var c1 = readXMLInt("c1", xml);
+    var c2 = readXMLInt("c2", xml);
+    var c3 = readXMLInt("c3", xml);
+    var c4 = readXMLInt("c4", xml);
+    var c5 = readXMLInt("c5", xml);
+    var c6 = readXMLInt("c6", xml);
+    var c7 = readXMLInt("c7", xml);
+    var c8 = readXMLInt("c8", xml);
+    var c9 = readXMLInt("c9", xml);
+    var c10 = readXMLInt("c10", xml);
+    var c11 = readXMLInt("c11", xml);
+    var c12 = readXMLInt("c12", xml);
+    var c13 = readXMLInt("c13", xml);
+    var c14 = readXMLInt("c14", xml);
+    var c15 = readXMLInt("c15", xml);
+    var c16 = readXMLInt("c16", xml);
+    var c17 = readXMLInt("c17", xml);
+    var c18 = readXMLInt("c18", xml);
+    var c19 = readXMLInt("c19", xml);
+    var c20 = readXMLInt("c20", xml);
+    var c21 = readXMLInt("c21", xml);
+    var c22 = readXMLInt("c22", xml);
+    var c23 = readXMLInt("c23", xml);
+    var c24 = readXMLInt("c24", xml);
+    var c25 = readXMLInt("c25", xml);
+    var c26 = readXMLInt("c26", xml);
+    var c27 = readXMLInt("c27", xml);
+    var c28 = readXMLInt("c28", xml);
+    var c29 = readXMLInt("c29", xml);
+    var c30 = readXMLInt("c30", xml);
+
+    var id = readXMLInt("i", xml);
+    var session = readXMLInt("s", xml);
+    var acctype = readXMLInt("acctype", xml);
+    var stage = readXMLInt("stage", xml);
+
+    var v = readXMLStr("v", xml);
+    //var name = readXMLStr("n", xml);
+    //var cc = readXMLStr("cc", xml);
+
+	//debugger
+
+    var a1 = v.substr(8, 1);
+    var a2 = v.substr(9 + a1 * 2, 7);
+    var a3 = v.substr(16 + a1 * 2, 7);
+    var ac_sum = 0;
+    var c_sum = 0;
+    var c_sum2 = 0;
+    c_sum = (c1 + c2 + c3 + c4 + c5 + c6 + c7 + c8 + c9 + c10 + c11 + c12 + c13 + c14 + c15 + c16 + c17 + c18 + c19 + c20 + c21 + c22 + c23 + c24 + c25 + c26 + c27 + c28 + c29 + c30 + id + stage + acctype + session % 1000000) % 1000000 + 1000000;
+    c_sum2 = (9999998 - a3 - a2) / 3;
+    console.log(`c_sum: ${c_sum}`);
+    console.log(`c_sum2: ${c_sum2}`);
+    ac_sum = c_sum2 - c_sum;
+    return ac_sum == id % 13 + id % 61 + id % 107
+}
+
+function readXMLInt(str0, str1) {
+    var reg = new RegExp(`<${str0}>(\\S*)<\\/${str0}>`)
+    return parseInt(str1.match(reg)[1]);
+}
+
+function readXMLStr(str0, str1) {
+    var reg = new RegExp(`<${str0}>(\\S*)<\\/${str0}>`)
+    return str1.match(reg)[1];
+}
+
+//   http://s.herofighter.com/v0.7/login.php?em=testreg13@ym.com&pw=1234563
+
+//	 var testnum = ""
+//	 var a1 = 0
+//   var a2 = 0
+//   var a3 = 0
+//   for(var a = 0; a < 100; a++) {
+//   do {
+//   testnum = ""
+//	 for(var l = 0; l < 49; l++) {
+//	 testnum += Math.floor((Math.random()* 9))
+//	 }
+//   a1 = testnum.substr(8, 1);
+//   a2 = testnum.substr(9 + a1 * 2, 7);
+//   a3 = testnum.substr(16 + a1 * 2, 7);
+//   c_sum2 = (9999998 - a3 - a2) / 3;
+//	 } while((9999998 - a3 - a2) % 3 != 0 || (9999998 - a3 - a2) < 0 || (9999998 - a3 - a2) / 3 % 1000000 == (9999998 - a3 - a2) / 3)
+//	 c_sum3 = c_sum2 - 1000000 + (Math.floor((Math.random() * 9) + 1) * 1000000)
+//	 console.log((9999998 - a3 - a2) / 3)
+//	 console.log(`c_sum2: ${c_sum2}`)
+//	 console.log(`c_sum3: ${c_sum3}`)
+//	 console.log(`v: ${testnum}`)
+//	 }
+
+   </script>
+<body>
+
+
+
+</body>
+</html>
+
