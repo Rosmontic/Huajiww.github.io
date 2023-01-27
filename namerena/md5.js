@@ -5016,6 +5016,82 @@
                     g.at(a, u)
                     return g
                 }
+                if (a == "hell") {
+                    t = H.d(a) + H.d($.ah())
+                    s = H.a([], [T.H])
+                    r = H.a([], [T.y])
+                    q = P.U(P.f, T.p)
+                    p = new F.b([T.M])
+                    p.c = p
+                    p.b = p
+                    o = new F.b([T.L])
+                    o.c = o
+                    o.b = o
+                    n = new F.b([T.G])
+                    n.c = n
+                    n.b = n
+                    m = new F.b([T.J])
+                    m.c = m
+                    m.b = m
+                    l = new F.b([T.K])
+                    l.c = l
+                    l.b = l
+                    k = new F.b([T.D])
+                    k.c = k
+                    k.b = k
+                    j = new F.b([T.A])
+                    j.c = j
+                    j.b = j
+                    i = new F.b([T.C])
+                    i.c = i
+                    i.b = i
+                    h = new F.b([T.I])
+                    h.c = h
+                    h.b = h
+                    g = [P.j]
+                    g = new T.hell(a,u,t,f,s,r,q,p,o,n,m,l,k,j,i,h,H.a([], g),H.a([], g),H.a([], g),H.a([], g))
+                    g.Y(a, u, t, f)
+                    g.at(a, u)
+                    return g
+                }
+                if (a == "yurix") {
+                    t = H.d(a) + H.d($.ah())
+                    s = H.a([], [T.H])
+                    r = H.a([], [T.y])
+                    q = P.U(P.f, T.p)
+                    p = new F.b([T.M])
+                    p.c = p
+                    p.b = p
+                    o = new F.b([T.L])
+                    o.c = o
+                    o.b = o
+                    n = new F.b([T.G])
+                    n.c = n
+                    n.b = n
+                    m = new F.b([T.J])
+                    m.c = m
+                    m.b = m
+                    l = new F.b([T.K])
+                    l.c = l
+                    l.b = l
+                    k = new F.b([T.D])
+                    k.c = k
+                    k.b = k
+                    j = new F.b([T.A])
+                    j.c = j
+                    j.b = j
+                    i = new F.b([T.C])
+                    i.c = i
+                    i.b = i
+                    h = new F.b([T.I])
+                    h.c = h
+                    h.b = h
+                    g = [P.j]
+                    g = new T.yuri2(a,u,t,f,s,r,q,p,o,n,m,l,k,j,i,h,H.a([], g),H.a([], g),H.a([], g),H.a([], g))
+                    g.Y(a, u, t, f)
+                    g.at(a, u)
+                    return g
+                }
                 if (a == $.kk()) {
                     t = H.d(a) + H.d($.ah())
                     s = H.a([], [T.H])
@@ -5951,6 +6027,12 @@
             _.f = 0
             _.c = _.b = _.a = _.r = null
         },
+        hellFireAttack: function hellFireAttack() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
         dR: function dR() {
             var _ = this
             _.e = !1
@@ -6249,7 +6331,19 @@
             _.f = 0
             _.c = _.b = _.a = _.r = null
         },
+        hellCheckHP: function hellCheckHP() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
         dM: function dM() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
+        hellWindAttack: function hellWindAttack() {
             var _ = this
             _.e = !1
             _.f = 0
@@ -6262,6 +6356,12 @@
             _.c = _.b = _.a = _.r = null
         },
         tigerBlastPunch: function tigerBlastPunch() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
+        hellBehead: function hellBehead() {
             var _ = this
             _.e = !1
             _.f = 0
@@ -6286,6 +6386,12 @@
             _.c = _.b = _.a = _.r = null
         },
         tigerFastPunch: function tigerFastPunch() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
+        hellCutter: function hellCutter() {
             var _ = this
             _.e = !1
             _.f = 0
@@ -6777,6 +6883,84 @@
             _.X = _.W = !1
             _.F = null
         },
+        hell: function hell(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t) {
+            var _ = this
+            _.aI = 0
+            _.aP = _.bb = _.af = null
+            _.a = a
+            _.b = b
+            _.c = c
+            _.d = d
+            _.y = _.x = _.r = _.f = _.e = null
+            _.z = 0
+            _.fy = _.fx = _.fr = _.dy = _.dx = _.db = _.cy = _.cx = _.ch = _.Q = null
+            _.go = 1
+            _.id = e
+            _.upgrade = false
+            _.k2 = _.k1 = null
+            _.k3 = f
+            _.k4 = null
+            _.r1 = g
+            _.r2 = h
+            _.rx = i
+            _.ry = j
+            _.x1 = k
+            _.x2 = l
+            _.y1 = m
+            _.y2 = n
+            _.I = o
+            _.N = p
+            _.A = !1
+            _.u = q
+            _.U = null
+            _.D = r
+            _.q = s
+            _.a_ = t
+            _.V = _.O = _.L = 0
+            _.J = 32768
+            _.j = 0
+            _.X = _.W = !1
+            _.F = null
+        },
+        yuri2: function yuri2(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t) {
+            var _ = this
+            _.aI = 0
+            _.aP = _.bb = _.af = null
+            _.a = a
+            _.b = b
+            _.c = c
+            _.d = d
+            _.y = _.x = _.r = _.f = _.e = null
+            _.z = 0
+            _.fy = _.fx = _.fr = _.dy = _.dx = _.db = _.cy = _.cx = _.ch = _.Q = null
+            _.go = 1
+            _.id = e
+            _.upgrade = false
+            _.k2 = _.k1 = null
+            _.k3 = f
+            _.k4 = null
+            _.r1 = g
+            _.r2 = h
+            _.rx = i
+            _.ry = j
+            _.x1 = k
+            _.x2 = l
+            _.y1 = m
+            _.y2 = n
+            _.I = o
+            _.N = p
+            _.A = !1
+            _.u = q
+            _.U = null
+            _.D = r
+            _.q = s
+            _.a_ = t
+            _.V = _.O = _.L = 0
+            _.J = 32768
+            _.j = 0
+            _.X = _.W = !1
+            _.F = null
+        },
         i4: function i4(a) {
             var _ = this
             _.fr = a
@@ -7070,6 +7254,12 @@
             _.f = 0
             _.c = _.b = _.a = _.r = null
         },
+        yuriSuperControl: function yuriSuperControl() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
         df: function df(a, b, c, d, e, f, g, h) {
             var _ = this
             _.a = a
@@ -7289,6 +7479,12 @@
             _.c = _.b = _.a = _.r = null
         },
         dQ: function dQ() {
+            var _ = this
+            _.e = !1
+            _.f = 0
+            _.c = _.b = _.a = _.r = null
+        },
+        hellDefend: function hellDefend() {
             var _ = this
             _.e = !1
             _.f = 0
@@ -13962,6 +14158,17 @@
             s.a0(u * (1.5 + t), !0, this.r, T.mC(), c, d)
         }
     }
+    T.hellFireAttack.prototype = {
+        t: function(a, b, c, d) {
+            var u, t, s = a[0].a, r = H.o(s.r1.h(0, $.d3()), "$iaQ")
+            if (r == null)
+                r = new T.aQ()
+            u = T.u(this.r, !0, c)
+            t = r.b
+            d.a.push(T.e("[0]使用[地狱之火]", this.r, s, null, null, 1, 1000, 100))
+            s.a0(u * 1.25 * (1.5 + t), !0, this.r, T.mC(), c, d)
+        }
+    }
     T.dR.prototype = {
         am: function(a, b) {
             if (b)
@@ -14460,7 +14667,7 @@
             u.r.E()
             u.id = 5
             r = u.r
-            u.go = 110 + r.db + (240 + u.r.db * 4)
+            u.go = 240 + u.r.db * 4
             s = u.r
             s.j = s.j - 256
             s = C.c.K(O.c("PurV"), $.nh())
@@ -15032,7 +15239,7 @@
     T.tigerFastPunch.prototype = {
         t: function(a, b, c, d) {
             var u, t, s, r, q, p, o, n = this, m = null, l = a[0].a, k = d.a
-            k.push(T.e(n.r.upgrade ? "[0]使用[雷霆电动]" : "[0]使用[极速子弹拳]", n.r, l, m, m, 1, 1000, 100))
+            k.push(T.e(n.r.upgrade ? "[0]使用[电动子弹]" : "[0]使用[极速子弹拳]", n.r, l, m, m, 1, 1000, 100))
             u = 4 + (c.m() & 3)
             if(n.r.upgrade) {
 				 u = 8
@@ -15057,6 +15264,36 @@
                     if (l.aA(l.ak(C.e.Z(q * 0.45 / T.cc(l, !0, c)), o, T.a3(), c, d), o, T.a3(), c, d) > 0)
                         s = !0
                     k[p].b = 300
+                }
+            }
+        }
+    }
+    T.hellCutter.prototype = {
+        t: function(a, b, c, d) {
+            var u, t, s, r, q, p, o, n = this, m = null, l = a[0].a, k = d.a, multiply = 3
+            k.push(T.e("[0]使用[地狱分割]", n.r, l, m, m, 1, 1000, 100))
+            u = 6
+            t = 100 + n.r.cy
+            for (s = !1,
+            r = 0; r < u; ++r) {
+                q = n.r
+                if (q.fr > 0 && !q.A && l.fr > 0) {
+                    k.push($.v())
+                    if (l.fr > 0 && !l.A && T.bd(t, l.dx + l.cy, c)) {
+                        if (s)
+                            k.push(T.e(O.c("SYdr"), l, n.r, m, m, 0, 1000, 100))
+                        else
+                            k.push(T.e(O.c("vVob"), l, n.r, m, m, 0, 1000, 100))
+                        return
+                    }
+                    t -= 10
+                    q = T.u(n.r, !0, c)
+                    p = k.length
+                    o = n.r
+                    if (l.aA(l.ak(C.e.Z(q * 0.33 * multiply / T.cc(l, !0, c)), o, T.a3(), c, d), o, T.a3(), c, d) > 0)
+                        s = !0
+                    k[p].b = 300
+                    multiply = 1
                 }
             }
         }
@@ -15142,6 +15379,23 @@
         },
         $iD: 1
     }
+    T.hellCheckHP.prototype = {
+        ak: function(a, b, c, d, e) {
+			if(this.r.fr - a <= 184 && !this.r.upgrade && !b.millionPower) {
+				this.r.upgrade = true
+				e.a.push($.v())
+				e.a.push(T.e("[0]发动[人剑合一]", this.r, null, null, null, 1, 1000, 1000))
+				e.a.push($.v())
+				e.a.push(T.e("[0]抵挡所有伤害", this.r, null, null, null, 0, 1000, 100))
+				return 0
+			}
+            return a
+        },
+        T: function() {
+            this.r.y1.i(0, this)
+        },
+        $iD: 1
+    }
     T.dM.prototype = {
         gb3: function() {
             return 5
@@ -15164,6 +15418,32 @@
                 if (o.fr > 0) {
                     q.push($.v())
                     o.a0(p, !0, this.r, T.kV(), c, d)
+                }
+            }
+        }
+    }
+    T.hellWindAttack.prototype = {
+        gb3: function() {
+            return 5
+        },
+        gb4: function() {
+            return 6
+        },
+        t: function(a, b, c, d) {
+            var u, t, s, r, q, p, o, n = H.a([], [T.aU])
+            for (u = 0; u < a.length; ++u)
+                n.push(a[u].a)
+            t = "[0]使用[地狱风暴剑]"
+            s = this.r
+            r = H.a(n.slice(0), [H.n(n, 0)])
+            q = d.a
+            q.push(T.e(t, s, null, null, r, 1, 1000, 100))
+            p = T.u(this.r, !0, c) * 2.5 / (n.length + 0.5) * 1.1
+            for (u = 0; u < n.length; ++u) {
+                o = n[u]
+                if (o.fr > 0) {
+                    q.push($.v())
+                    o.a0(p, !0, this.r, T.mA(), c, d)
                 }
             }
         }
@@ -15343,6 +15623,21 @@
             t.a0(s * multiple, !1, u.r, T.a3(), c, d)
         }
     }
+    T.hellBehead.prototype = {
+        t: function(a, b, c, d) {
+            var u = this, t = a[0].a, multiple = 1.7, h
+            s = T.u(u.r, !1, c)
+            d.a.push(T.e("[0]使用[地狱断头]", u.r, t, null, null, 1, 1000, 100))
+            if((c.m() & 127) < 60 && t.ch + t.dx + 72 < 130) {
+                h = t.fr
+                t.fr = 0
+				d.a.push(T.e("[1]无法抵挡此击", u.r, T.a1(t, h), new T.aT(h), t, h + 80, 1000, 100))
+				t.bf(h, u.r, c, d)
+            } else {
+				t.a0(s * multiple, !1, u.r, T.a3(), c, d)
+            }
+        }
+    }
     T.tigerMillionPunch.prototype = {
         ga1: function() {
             return 10
@@ -15366,7 +15661,7 @@
 				u.r.Q *= 10
 				u.r.ch *= 10
 				u.r.cx *= 10
-                if(b.e != "dark@!") {
+                if(b.e != "dark@!" || b.e == "dark@!" && b.level < 3) {
 					d.a.push($.v())
 					d.a.push(T.e("[0]: 嘿嘿，[1]，我就一直在[等候]你这击出现呀", u.r, t.$iav ? t.a5.x : (t.a5 ? t.a5 : t), null, null, 1, 1000, 7000))
 					d.a.push($.v())
@@ -15375,31 +15670,15 @@
 					d.a.push(T.e("[0]: 最强的攻击就是防守最[弱]的时候", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
 					d.a.push(T.e(`[0]: 现在，就让你知道我${u.r.r}如何[败]你吧`, u.r, t, null, null, 1, 1000, 7000))
-                } else if(b.level == 3){
+                } else if(b.e == "dark@!" && b.level == 3){
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 呵呵，看来我已老了", u.r, t, null, null, 1, 1000, 7000))
+					d.a.push(T.e("[0]: 黑暗，你的杀招确实厉害，若我以相同力量硬拼，便只会在五秒内死败", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 想不到…你这样的[小角色]竟然能领悟这个[强绝境界]", u.r, t, null, null, 1, 1000, 7000))
+					d.a.push(T.e("[0]: 但是，我海虎绝不是一个能轻易杀死的人", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 破解我的[所有杀著]", u.r, t, null, null, 1, 1000, 7000))
+					d.a.push(T.e("[0]: 现在我便要将力量迫至[绝不可能到达之境界]", u.r, t, null, null, 1, 1000, 7000))
 					d.a.push($.v())
-					d.a.push(T.e("[0]: 海虎，废话少说，就看你以[生命]推动的[海虎爆破拳]能否取我性命吧", t, u.r, null, null, 1, 1000, 7000))
-					d.a.push($.v())
-					d.a.push(T.e("[0]: 哼。…我为何要用生命力推动了？", u.r, t, null, null, 1, 1000, 7000))
-					d.a.push($.v())
-					d.a.push(T.e("[0]: 什么？", t, u.r, null, null, 1, 1000, 7000))
-					d.a.push($.v())
-					d.a.push(T.e("[0]: 在你的杀著轰向我之时，我便有这一[感觉]", u.r, t, null, null, 1, 1000, 7000))
-					d.a.push($.v())
-					d.a.push(T.e("[0]: 「我已能将力量谷至[自毁境界]」", u.r, t, null, null, 1, 1000, 7000))
-					d.a.push($.v())
-					d.a.push(T.e("[0]: 绝无可能！海虎，强谷至[一百万匹]力量只会令你九死一生！", t, u.r, null, null, 1, 1000, 7000))
-					d.a.push($.v())
-					d.a.push(T.e("[0]: 哈哈，谁知道呢？我的[感觉]告诉我，现在便是[最佳时机]", u.r, t, null, null, 1, 1000, 7000))
-					d.a.push($.v())
-					d.a.push(T.e("[0]: 把面前这可恶的家伙[轰下]！", u.r, t, null, null, 1, 1000, 7000))
-					d.a.push($.v())
-					d.a.push(T.e("[0]: 现在，就让你知道我海虎如何[败]你吧", u.r, t, null, null, 1, 1000, 7000))
+					d.a.push(T.e("[0]: 看你这春袋能否抵挡我的[自毁一击]了!", u.r, t, null, null, 1, 1000, 7000))
 					u.r.go += 3
                 }
                 d.a.push($.v())
@@ -16035,6 +16314,68 @@
             t.push(u)
         }
     }
+    T.hell.prototype = {
+        gah: function() {
+            return C.hell
+        },
+        gaQ: function() {
+            return H.a(["berserk", "charm"], [P.f])
+        },
+        aa: function() {
+            var u, t = new T.aK()
+            t.r = this
+            this.k2 = t
+            t = this.id
+            u = new T.hellDefend()
+            u.f = 90
+            t.push(u)
+            u = new T.hellFireAttack()
+            u.f = 20
+            t.push(u)
+            u = new T.hellWindAttack()
+            u.f = 20
+            t.push(u)
+            u = new T.hellCutter()
+            u.f = 30
+            t.push(u)
+            u = new T.hellBehead()
+            u.f = 30
+            t.push(u)
+            u = new T.hellCheckHP()
+            t.push(u)
+        }
+    }
+    T.yuri2.prototype = {
+        gah: function() {
+            return C.hell
+        },
+        gaQ: function() {
+            return H.a(["berserk", "charm"], [P.f])
+        },
+        aa: function() {
+            var u, t = new T.aK()
+            t.r = this
+            this.k2 = t
+            t = this.id
+            u = new T.hellDefend()
+            u.f = 90
+            t.push(u)
+            u = new T.hellFireAttack()
+            u.f = 20
+            t.push(u)
+            u = new T.hellWindAttack()
+            u.f = 20
+            t.push(u)
+            u = new T.hellCutter()
+            u.f = 30
+            t.push(u)
+            u = new T.hellBehead()
+            u.f = 30
+            t.push(u)
+            u = new T.hellCheckHP()
+            t.push(u)
+        }
+    }
     T.i4.prototype = {
         gR: function() {
             return 1
@@ -16348,7 +16689,33 @@
         am: function(a, b) {
             var u = a.x
               , t = this.r
-            return u != t.y && a !== t && !a.r1.G(0, $.ai()) && a.e != "tigershark@!" && a.e != "dark@!"
+            return u != t.y && a !== t && !a.r1.G(0, $.ai()) && a.e != "tigershark@!" && a.e != "dark@!" && a.e != "yurix@!"
+        },
+        t: function(a, b, c, d) {
+            var u, t, s, r = null, q = a[0].a, p = d.a
+            p.push(T.e(O.c("Axcd"), this.r, q, r, r, 1, 1000, 100))
+            u = q.x.c.length
+            if (u < 3)
+                u = 3
+            t = H.o(q.r1.h(0, $.ai()), "$ibf")
+            s = this.r
+            if (t == null) {
+                t = new T.bf(s.y,q)
+                t.y = new T.ay(t)
+                t.z = u
+                t.aO(0)
+            } else {
+                t.r = s.y
+                t.z += u
+            }
+            p.push(T.e(C.c.K(O.c("aTZN"), $.l8()), this.r, q, r, r, 120, 1000, 100))
+        }
+    }
+    T.yuriSuperControl.prototype = {
+        am: function(a, b) {
+            var u = a.x
+              , t = this.r
+            return u != t.y && a !== t && !a.r1.G(0, $.ai())
         },
         t: function(a, b, c, d) {
             var u, t, s, r = null, q = a[0].a, p = d.a
@@ -17808,6 +18175,22 @@
         },
         $iD: 1
     }
+    T.hellDefend.prototype = {
+        ga1: function() {
+            return 2000
+        },
+        ak: function(a, b, c, d, e) {
+            if (d.m() < this.f && this.r.bq(d)) {
+                e.a.push(T.e(O.c("zGKr"), this.r, b, null, null, 40, 1000, 100))
+                return C.b.v(a, 3)
+            }
+            return a
+        },
+        T: function() {
+            this.r.y1.i(0, this)
+        },
+        $iD: 1
+    }
     T.hZ.prototype = {
         T: function() {
             var u = this
@@ -19108,18 +19491,18 @@
         t(P.cD, P.l)
         t(Z.hl, Z.ax)
         s(F.ab, [T.H, T.M, T.D, T.J, T.L, T.K, T.A, T.G, T.C, T.I])
-        s(T.H, [T.y, T.hJ, T.hR, T.i0, T.i3, T.dU, T.dZ, T.bU, T.dQ, T.hZ, T.i5, T.dV, T.dX, T.i9, T.ih, T.im, T.io, T.tigerMillionPunch, T.darkRevive])
-        s(T.y, [T.dL, T.hI, T.hK, T.bx, T.hL, T.hM, T.dN, T.dO, T.dP, T.hS, T.hU, T.hV, T.bV, T.dR, T.hX, T.dS, T.dT, T.i1, T.i6, T.i8, T.dW, T.ia, T.i7, T.ig, T.ij, T.hW, T.ik, T.il, T.dM, T.hO, T.dc, T.hQ, T.i_, T.bI, T.i2, T.i4, T.ie, T.aK, T.bm, T.bn, T.hT, T.dY, T.ic, T.tigerAttack, T.tigerCheckHP, T.tigerIceAttack, T.tigerBlastPunch, T.tigerBlade, T.tigerRecover, T.tigerFastPunch, T.tigerWindAttack, T.tigerBlastKick, T.darkRecover, T.darkFastAttack, T.darkIron, T.darkHaste, T.darkLock, T.darkDemonSword, T.darkAttack])
+        s(T.H, [T.y, T.hJ, T.hR, T.i0, T.i3, T.dU, T.dZ, T.bU, T.dQ, T.hZ, T.i5, T.dV, T.dX, T.i9, T.ih, T.im, T.io, T.tigerMillionPunch, T.darkRevive, T.hellDefend])
+        s(T.y, [T.dL, T.hI, T.hK, T.bx, T.hL, T.hM, T.dN, T.dO, T.dP, T.hS, T.hU, T.hV, T.bV, T.dR, T.hX, T.dS, T.dT, T.i1, T.i6, T.i8, T.dW, T.ia, T.i7, T.ig, T.ij, T.hW, T.ik, T.il, T.dM, T.hO, T.dc, T.hQ, T.i_, T.bI, T.i2, T.i4, T.ie, T.aK, T.bm, T.bn, T.hT, T.dY, T.ic, T.tigerAttack, T.tigerCheckHP, T.tigerIceAttack, T.tigerBlastPunch, T.tigerBlade, T.tigerRecover, T.tigerFastPunch, T.tigerWindAttack, T.tigerBlastKick, T.darkRecover, T.darkFastAttack, T.darkIron, T.darkHaste, T.darkLock, T.darkDemonSword, T.darkAttack, T.hellFireAttack, T.hellWindAttack, T.hellCutter, T.hellBehead, T.hellCheckHP])
         s(T.M, [T.bf, T.co, T.dj, T.cG, T.aN, T.hz, T.darkHasteRun, T.darkSuperUpgrade])
         s(T.p, [T.dt, T.aQ, T.ii, T.h0, T.iT])
         s(T.w, [T.dC, T.av, T.cA, T.hc, T.hj, T.hk, T.he, T.cy])
         s(T.D, [T.cg, T.dF, T.el])
         s(T.J, [T.dE, T.ay])
         s(T.av, [T.hh, T.hi, T.ho])
-        s(T.cA, [T.eY, T.eZ, T.f_, T.f0, T.d7, T.d8, T.f1, T.f2, T.bA, T.f4, T.f6, T.tigershark, T.dark])
+        s(T.cA, [T.eY, T.eZ, T.f_, T.f0, T.d7, T.d8, T.f1, T.f2, T.bA, T.f4, T.f6, T.tigershark, T.dark, T.hell, T.yuri2])
         t(T.hg, T.cy)
         t(T.f3, T.bA)
-        t(T.e_, T.dN)
+        t(T.e_, T.dN, T.yuriSuperControl)
         s(T.aU, [T.b_, T.bG, T.dr, T.ch])
         s(T.aw, [T.dJ, T.bT])
         t(T.hs, T.L)
@@ -19471,6 +19854,7 @@
         C.O = H.a(u([72, 39, 69, 76, 67, 66, 0, 84]), [P.j])
         C.tigershark = H.a(u([62, 49, 89, 86, 77, 76, 30, 120]), [P.j])
         C.dark = H.a(u([42, 69, 59, 66, 67, 68, 40, 120]), [P.j])
+        C.hell = H.a(u([20, 20, 60, 50, 20, 20, 90, 120]), [P.j])
         C.V = H.a(u(["*::class", "*::dir", "*::draggable", "*::hidden", "*::id", "*::inert", "*::itemprop", "*::itemref", "*::itemscope", "*::lang", "*::spellcheck", "*::title", "*::translate", "A::accesskey", "A::coords", "A::hreflang", "A::name", "A::shape", "A::tabindex", "A::target", "A::type", "AREA::accesskey", "AREA::alt", "AREA::coords", "AREA::nohref", "AREA::shape", "AREA::tabindex", "AREA::target", "AUDIO::controls", "AUDIO::loop", "AUDIO::mediagroup", "AUDIO::muted", "AUDIO::preload", "BDO::dir", "BODY::alink", "BODY::bgcolor", "BODY::link", "BODY::text", "BODY::vlink", "BR::clear", "BUTTON::accesskey", "BUTTON::disabled", "BUTTON::name", "BUTTON::tabindex", "BUTTON::type", "BUTTON::value", "CANVAS::height", "CANVAS::width", "CAPTION::align", "COL::align", "COL::char", "COL::charoff", "COL::span", "COL::valign", "COL::width", "COLGROUP::align", "COLGROUP::char", "COLGROUP::charoff", "COLGROUP::span", "COLGROUP::valign", "COLGROUP::width", "COMMAND::checked", "COMMAND::command", "COMMAND::disabled", "COMMAND::label", "COMMAND::radiogroup", "COMMAND::type", "DATA::value", "DEL::datetime", "DETAILS::open", "DIR::compact", "DIV::align", "DL::compact", "FIELDSET::disabled", "FONT::color", "FONT::face", "FONT::size", "FORM::accept", "FORM::autocomplete", "FORM::enctype", "FORM::method", "FORM::name", "FORM::novalidate", "FORM::target", "FRAME::name", "H1::align", "H2::align", "H3::align", "H4::align", "H5::align", "H6::align", "HR::align", "HR::noshade", "HR::size", "HR::width", "HTML::version", "IFRAME::align", "IFRAME::frameborder", "IFRAME::height", "IFRAME::marginheight", "IFRAME::marginwidth", "IFRAME::width", "IMG::align", "IMG::alt", "IMG::border", "IMG::height", "IMG::hspace", "IMG::ismap", "IMG::name", "IMG::usemap", "IMG::vspace", "IMG::width", "INPUT::accept", "INPUT::accesskey", "INPUT::align", "INPUT::alt", "INPUT::autocomplete", "INPUT::autofocus", "INPUT::checked", "INPUT::disabled", "INPUT::inputmode", "INPUT::ismap", "INPUT::list", "INPUT::max", "INPUT::maxlength", "INPUT::min", "INPUT::multiple", "INPUT::name", "INPUT::placeholder", "INPUT::readonly", "INPUT::required", "INPUT::size", "INPUT::step", "INPUT::tabindex", "INPUT::type", "INPUT::usemap", "INPUT::value", "INS::datetime", "KEYGEN::disabled", "KEYGEN::keytype", "KEYGEN::name", "LABEL::accesskey", "LABEL::for", "LEGEND::accesskey", "LEGEND::align", "LI::type", "LI::value", "LINK::sizes", "MAP::name", "MENU::compact", "MENU::label", "MENU::type", "METER::high", "METER::low", "METER::max", "METER::min", "METER::value", "OBJECT::typemustmatch", "OL::compact", "OL::reversed", "OL::start", "OL::type", "OPTGROUP::disabled", "OPTGROUP::label", "OPTION::disabled", "OPTION::label", "OPTION::selected", "OPTION::value", "OUTPUT::for", "OUTPUT::name", "P::align", "PRE::width", "PROGRESS::max", "PROGRESS::min", "PROGRESS::value", "SELECT::autocomplete", "SELECT::disabled", "SELECT::multiple", "SELECT::name", "SELECT::required", "SELECT::size", "SELECT::tabindex", "SOURCE::type", "TABLE::align", "TABLE::bgcolor", "TABLE::border", "TABLE::cellpadding", "TABLE::cellspacing", "TABLE::frame", "TABLE::rules", "TABLE::summary", "TABLE::width", "TBODY::align", "TBODY::char", "TBODY::charoff", "TBODY::valign", "TD::abbr", "TD::align", "TD::axis", "TD::bgcolor", "TD::char", "TD::charoff", "TD::colspan", "TD::headers", "TD::height", "TD::nowrap", "TD::rowspan", "TD::scope", "TD::valign", "TD::width", "TEXTAREA::accesskey", "TEXTAREA::autocomplete", "TEXTAREA::cols", "TEXTAREA::disabled", "TEXTAREA::inputmode", "TEXTAREA::name", "TEXTAREA::placeholder", "TEXTAREA::readonly", "TEXTAREA::required", "TEXTAREA::rows", "TEXTAREA::tabindex", "TEXTAREA::wrap", "TFOOT::align", "TFOOT::char", "TFOOT::charoff", "TFOOT::valign", "TH::abbr", "TH::align", "TH::axis", "TH::bgcolor", "TH::char", "TH::charoff", "TH::colspan", "TH::headers", "TH::height", "TH::nowrap", "TH::rowspan", "TH::scope", "TH::valign", "TH::width", "THEAD::align", "THEAD::char", "THEAD::charoff", "THEAD::valign", "TR::align", "TR::bgcolor", "TR::char", "TR::charoff", "TR::valign", "TRACK::default", "TRACK::kind", "TRACK::label", "TRACK::srclang", "UL::compact", "UL::type", "VIDEO::controls", "VIDEO::height", "VIDEO::loop", "VIDEO::mediagroup", "VIDEO::muted", "VIDEO::preload", "VIDEO::width"]), [P.f])
         C.W = H.a(u([10, -6, 1000, 0, 10, -15, 6, 0]), [P.j])
         C.X = H.a(u(["", "", "", "", "", "", "", "", "", ""]), [P.f])
@@ -19513,7 +19897,7 @@
         $.ac = P.cs(P.f, Z.ax)
         $.or = function() {
             var u = P.f
-            return P.dq(["tigershark", "R0lGODlhEAAQAJEAAP8AAP///wAAAP///yH5BAEAAAMALAAAAAAQABAAAAI9nCepeS0AIxQNyQuoeSBgn1lQAI5lEpGSOnHjKqEgS2dPOad2l3fmTgoKg8ChccczsigcJUgjwkwqiyq0AAA7", "hell", "R0lGODlhEAAQAJEAAAC0/wAAAP///wAAACH5BAEAAAIALAAAAAAQABAAAAIqlB2px5IAY2ohWnnq3QFt7nzfI15kKWkodK4t2qllF7oZTMks3TjKxCgAADs=", "dark", "R0lGODlhEAAQALMAAPr6+wQEAf7+/QwKAhEQDf38+xEODP79/f////z8/Pn5+QAAAP///wAAAAAAAAAAACH5BAEAAAwALAAAAAAQABAAAARIkEm5qp2YjYW6rxn3Wd0yiYhVGUFJlWpFcCZKpncFo7io9x3ADecpqkYdwY5HRAgSMV4NUTgUryaGbeii+EgKEOZnzGa0sUwEADs=", "aokiji", "R0lGODlhEAAQAMIDAAAAAEB2/4Kl/////////////////////yH5BAEKAAQALAAAAAAQABAAAANISLrQsJC1MVwkLgSqLW6bQFFi4ACjIGxDoI7gqHFsO9UsXgFuPXIr0Or3691kHGSMxuRMSMPWi3IK/UqeTM7UuDio3YskDEkAADs=", "conan", "R0lGODlhEAAQAMIAAAAAANAYISpXyf///wAAAAAAAAAAAAAAACH5BAEKAAQALAAAAAAQABAAAANISATczkqBQasFcQlrBV6MsHGiEzQj5TEnELzM5cIsbdLLC+/6N/O/E6j3IP5ilVqrBUgNVi6HyDltSJoiVekTCU23me4DEkkAADs=", "covid", "R0lGODlhEAAQAIIAMf/GAOpK/f///wAAAP///wAAAAAAAAAAACH5BAEAAAQALAAAAAAQABAAAgNKSLrTvZC4AeqIqgEttoNU1wSOx1BBmoabNJGDGpjURlqBAJf6ba+WWgwmy3kcRYFO6AKolMuJBCAqmjIUJKd12moemNrxgnF9IgkAOw==", "ikaruga", "R0lGODlhEAAQAMIEAAAAAAcHB7MABFuV/////////////////yH5BAEKAAcALAAAAAAQABAAAANKeLrRsZA1Qlw8jmoCGgzaMAiC9iiTOFBk6WGUypLUk4pbW00EvhG0XWz1C2Z8o9kO1uuNSqUKCqR60l5MZ1AqAf0skczudJliFwkAOw==", "lazy", "R0lGODlhEAAQAMICAAAAAAgICP+3t/////+3t/+3t/+3t/+3tyH5BAEKAAQALAAAAAAQABAAAANPSLpM8K9JMCqQDoIwwp3VQG1fBnFeWFKW6GnL1rFi87raSQQcvXEhHkeQGwqOncBxKeAxj07io6kkQZXPKJM3YCa7yySwIhwnd5qAokhIAAA7", "mario", "R0lGODlhEAAQAIEAMQAAANgoAPz8/AAAACH5BAEAAAAALAAAAAAQABAAAQJBhD2px6AhRFgshRvvHCdJGH1CgoDhKXEWqLHboH2tvEItpq3ZvXvnfPIphooI0YgcLXyjpLKDQnE6g6hxSiVSAAUAOw==", "mosquito", "R0lGODlhEAAQAKECAAAAAP8AAP///////yH5BAEKAAMALAAAAAAQABAAAAJB3ICpaCnxRIRKoAkpsJu/AHpch4DgxR0kcK6GKrGB+zrylrzH2OL62or9SKcYYIgr5mq82eXI5AQtw1gxhVwwDAUAOw==", "saitama", "R0lGODlhEAAQAMIGAAAAAAgICGxsbP/AmP/PV/////jIUfjIUSH5BAEKAAcALAAAAAAQABAAAANKeLrRsZC1MVw8juraYNhUIVYSGIodZprPtG7ZC8YyFxSC8OZFAIi4nJAnAhgLx2DxZwQQCMZn7hmFOp/YKZZa3Xqth6bR1xADDgkAOw==", "seed", "R0lGODlhEAAQAMIDAAAAAG9tbUCy5////////////////////yH5BAEKAAQALAAAAAAQABAAAANFSLrQsJC1MVwkjuraVN6gA4CDIJCNSW5BkJon2LZpAMdzMLiAYN85HQ/28wWHpmJrN3sRjUya4xm0YJzNTmTKe1wkWkgCADs=", "slime", "R0lGODlhEAAQAMIEAAABAFaSRV6qSLn9qgAAAAAAAAAAAAAAACH5BAEKAAQALAAAAAAQABAAAANCSKrQvpA4QcWDrWoLsB5bxwDVYApB2jClaaaqRMIuCk92CuYBR8G9DSUjLBI3wMpRQzvhis4OqVUbjopKkczBvSQAADs=", "sonic", "R0lGODlhEAAQAMIDAAgICOgSJh9O/////////////////////yH5BAEKAAQALAAAAAAQABAAAANBSLrQsJA1IVwkjuraINDDsFUSFYZbh5knqj2T0LpUBp4jN9JpnJuc1S8UIGE+uUBRJRQonzXP5LlkSpCWy/URSQAAOw==", "yuri", "R0lGODlhEAAQAKEDAAAAAN4H28asxv///yH5BAEKAAMALAAAAAAQABAAAAI+hI85EB3s4DNBiFcvs3NjvmlL9WkesEDnKI7fw8Lpi6roMJ42jh8NNeEJVb+bsFc0HIfB5ZFhdPIO0mf0WAAAOw=="], u, u)
+            return P.dq(["tigershark", "R0lGODlhEAAQAJEAAP8AAP///wAAAP///yH5BAEAAAMALAAAAAAQABAAAAI9nCepeS0AIxQNyQuoeSBgn1lQAI5lEpGSOnHjKqEgS2dPOad2l3fmTgoKg8ChccczsigcJUgjwkwqiyq0AAA7", "hell", "R0lGODlhEAAQAJEAAHb9/wAAAP///wAAACH5BAEAAAIALAAAAAAQABAAAAIslB2px5IAY2ov2omC3QBrvgUOCFbk9Z1SqnasarbiW2awaJf4EUNY41D8DAUAOw==", "dark", "R0lGODlhEAAQALMAAPr6+wQEAf7+/QwKAhEQDf38+xEODP79/f////z8/Pn5+QAAAP///wAAAAAAAAAAACH5BAEAAAwALAAAAAAQABAAAARIkEm5qp2YjYW6rxn3Wd0yiYhVGUFJlWpFcCZKpncFo7io9x3ADecpqkYdwY5HRAgSMV4NUTgUryaGbeii+EgKEOZnzGa0sUwEADs=", "yurix", "R0lGODlhEAAQAKEDAAAAAN4H28asxv///yH5BAEKAAMALAAAAAAQABAAAAI+hI85EB3s4DNBiFcvs3NjvmlL9WkesEDnKI7fw8Lpi6roMJ42jh8NNeEJVb+bsFc0HIfB5ZFhdPIO0mf0WAAAOw==", "aokiji", "R0lGODlhEAAQAMIDAAAAAEB2/4Kl/////////////////////yH5BAEKAAQALAAAAAAQABAAAANISLrQsJC1MVwkLgSqLW6bQFFi4ACjIGxDoI7gqHFsO9UsXgFuPXIr0Or3691kHGSMxuRMSMPWi3IK/UqeTM7UuDio3YskDEkAADs=", "conan", "R0lGODlhEAAQAMIAAAAAANAYISpXyf///wAAAAAAAAAAAAAAACH5BAEKAAQALAAAAAAQABAAAANISATczkqBQasFcQlrBV6MsHGiEzQj5TEnELzM5cIsbdLLC+/6N/O/E6j3IP5ilVqrBUgNVi6HyDltSJoiVekTCU23me4DEkkAADs=", "covid", "R0lGODlhEAAQAIIAMf/GAOpK/f///wAAAP///wAAAAAAAAAAACH5BAEAAAQALAAAAAAQABAAAgNKSLrTvZC4AeqIqgEttoNU1wSOx1BBmoabNJGDGpjURlqBAJf6ba+WWgwmy3kcRYFO6AKolMuJBCAqmjIUJKd12moemNrxgnF9IgkAOw==", "ikaruga", "R0lGODlhEAAQAMIEAAAAAAcHB7MABFuV/////////////////yH5BAEKAAcALAAAAAAQABAAAANKeLrRsZA1Qlw8jmoCGgzaMAiC9iiTOFBk6WGUypLUk4pbW00EvhG0XWz1C2Z8o9kO1uuNSqUKCqR60l5MZ1AqAf0skczudJliFwkAOw==", "lazy", "R0lGODlhEAAQAMICAAAAAAgICP+3t/////+3t/+3t/+3t/+3tyH5BAEKAAQALAAAAAAQABAAAANPSLpM8K9JMCqQDoIwwp3VQG1fBnFeWFKW6GnL1rFi87raSQQcvXEhHkeQGwqOncBxKeAxj07io6kkQZXPKJM3YCa7yySwIhwnd5qAokhIAAA7", "mario", "R0lGODlhEAAQAIEAMQAAANgoAPz8/AAAACH5BAEAAAAALAAAAAAQABAAAQJBhD2px6AhRFgshRvvHCdJGH1CgoDhKXEWqLHboH2tvEItpq3ZvXvnfPIphooI0YgcLXyjpLKDQnE6g6hxSiVSAAUAOw==", "mosquito", "R0lGODlhEAAQAKECAAAAAP8AAP///////yH5BAEKAAMALAAAAAAQABAAAAJB3ICpaCnxRIRKoAkpsJu/AHpch4DgxR0kcK6GKrGB+zrylrzH2OL62or9SKcYYIgr5mq82eXI5AQtw1gxhVwwDAUAOw==", "saitama", "R0lGODlhEAAQAMIGAAAAAAgICGxsbP/AmP/PV/////jIUfjIUSH5BAEKAAcALAAAAAAQABAAAANKeLrRsZC1MVw8juraYNhUIVYSGIodZprPtG7ZC8YyFxSC8OZFAIi4nJAnAhgLx2DxZwQQCMZn7hmFOp/YKZZa3Xqth6bR1xADDgkAOw==", "seed", "R0lGODlhEAAQAMIDAAAAAG9tbUCy5////////////////////yH5BAEKAAQALAAAAAAQABAAAANFSLrQsJC1MVwkjuraVN6gA4CDIJCNSW5BkJon2LZpAMdzMLiAYN85HQ/28wWHpmJrN3sRjUya4xm0YJzNTmTKe1wkWkgCADs=", "slime", "R0lGODlhEAAQAMIEAAABAFaSRV6qSLn9qgAAAAAAAAAAAAAAACH5BAEKAAQALAAAAAAQABAAAANCSKrQvpA4QcWDrWoLsB5bxwDVYApB2jClaaaqRMIuCk92CuYBR8G9DSUjLBI3wMpRQzvhis4OqVUbjopKkczBvSQAADs=", "sonic", "R0lGODlhEAAQAMIDAAgICOgSJh9O/////////////////////yH5BAEKAAQALAAAAAAQABAAAANBSLrQsJA1IVwkjuraINDDsFUSFYZbh5knqj2T0LpUBp4jN9JpnJuc1S8UIGE+uUBRJRQonzXP5LlkSpCWy/URSQAAOw==", "yuri", "R0lGODlhEAAQAKEDAAAAAN4H28asxv///yH5BAEKAAMALAAAAAAQABAAAAI+hI85EB3s4DNBiFcvs3NjvmlL9WkesEDnKI7fw8Lpi6roMJ42jh8NNeEJVb+bsFc0HIfB5ZFhdPIO0mf0WAAAOw=="], u, u)
         }()
         $.kG = function() {
             var u = P.f
